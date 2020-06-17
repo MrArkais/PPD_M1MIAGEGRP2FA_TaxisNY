@@ -1,0 +1,97 @@
+// Import theming functions
+@import "~@angular/material/theming";
+.profile{
+  padding-top : 80px;
+}
+
+.example-container {
+  height: 1000px;
+}
+
+.page-title {
+  margin: 2%;
+  text-align: center;
+  font-weight: bolder;
+  color: rgb(124, 124, 123);
+
+}
+.group-title {
+  color: white;
+  background-color: rgb(252, 186, 3);
+}
+mat-card {
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+mat-card-content {
+  text-align: center;
+}
+.filters {
+  padding: 20px;
+  align-items: center;
+  background-color: rgba(124, 124, 123, 0.4);
+}
+
+mat-expansion-panel {
+  margin-bottom: 10px;
+}
+.btn {
+  background-color: rgb(252, 186, 3);
+  color: white;
+  width: 100%;
+}
+
+.dashboard {
+  background-color: rgba(70, 70, 69, 0.1);
+}
+
+.loader {
+  background-color: rgba(70, 70, 69, 0.1);
+  height: 100%;
+}
+
+.chart-box {
+  text-align: center;
+  height: 50px;
+  width: 300px;
+}
+.stat-box {
+  width: 80%;
+  margin: 5px auto;
+}
+
+.metrique {
+  width: 80%;
+  height: 30%;
+  text-align: center;
+}
+
+::ng-deep {
+  .custom-slider .ng5-slider .ng5-slider-bar {
+    background: rgb(214, 194, 8);
+    height: 2px;
+  }
+  .custom-slider .ng5-slider .ng5-slider-selection {
+    background: rgba(124, 124, 123, 0.9);
+    height: 2.5px;
+    border-color: rgba(124, 124, 123, 0.2);
+  }
+  .custom-slider .ng5-slider .ng5-slider-pointer {
+    width: 8px;
+    height: 16px;
+    top: auto; /* to remove the default positioning */
+    bottom: 0;
+    background-color: rgba(124, 124, 123, 0.9);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+  .custom-slider .ng5-slider .ng5-slider-pointer:after {
+    display: none;
+  }
+
+  .custom-slider .ng5-slider .ng5-slider-bubble {
+    bottom: 12px;
+  }
+}

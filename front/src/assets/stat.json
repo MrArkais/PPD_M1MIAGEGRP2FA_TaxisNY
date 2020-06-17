@@ -1,0 +1,34 @@
+{
+  "zone_depart_distinct": [
+      {
+          "zone_depart": "Queens",
+          "count": 176
+      },
+      {
+          "zone_depart": "Manhattan",
+          "count": 495
+      }
+  ],
+  "zone_arrivee_distinct": [
+      {
+          "zone_arrivee": "EWR",
+          "count": 391
+      },
+      {
+          "zone_arrivee": "Bronx",
+          "count": 250
+      }
+  ],
+  "moyenne": [
+      {
+          "moyenne_total_amount": 89.39
+      }
+  ],
+  "metrique": [
+      {
+          "nan": 0,
+          "duplicate": 363633,
+          "filtre": 490769
+      }
+  ]
+}

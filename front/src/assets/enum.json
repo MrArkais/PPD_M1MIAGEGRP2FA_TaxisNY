@@ -1,0 +1,60 @@
+{
+    "zones": [
+                "Manhattan",
+                "Queens",
+                "Bronx",
+                "EWR",
+                "Staten Island",
+                "Brooklyn"
+
+    ],
+    "vendors": [
+       
+        {
+            "id": 1,
+            "name": "Creative Mobile Technologies"
+        },
+        {
+            "id": 2,
+            "name": "VeriFone Inc."
+        }
+    ],
+    "payment_type": [
+        {
+            "id": 1,
+            "name": "Carte de crédit"
+        },
+        {
+            "id": 2,
+            "name": "Espèces"
+        },
+        {
+            "id": 3,
+            "name": "Non pris en charge"
+        },
+        {
+            "id": 4,
+            "name": "Litige"
+        },
+        {
+            "id": 5,
+            "name": "Inconnu"
+        },
+        {
+            "id": 6,
+            "name": "Course annulée"
+        }
+    ],
+    "rate_code": [
+       
+        {
+            "id": 1,
+            "name": "Tarif standard"
+        },
+        {
+            "id": 2,
+            "name": "Aéroport"
+        }
+    ]
+
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+    <mat-toolbar   class="items_menu">
+      <a href="/">
+      <img alt="logo-taxi" src="../assets/Logo_taxis.png"  height="60">
+   </a>
+           
+
+      <span class="title">
+        <h1>Taxis NY</h1>
+      </span>
+
+      <button mat-button routerLink="/voyageur" class="buttons">
+        Voyageur
+      </button>
+      <button mat-button routerLink="/datascientist" class="buttons">
+        Data Scientist
+      </button>
+      <button mat-button routerLink="/entreprise" class="buttons">
+        Entreprise
+      </button>
+      <button mat-button routerLink="/chauffeur" class="buttons">
+        Chauffeur Taxi
+      </button>  
+      <button mat-button routerLink="/about" class="buttons">A propos</button>
+      <button mat-button routerLink="/contact" class="buttons">Contact</button>
+    </mat-toolbar>
+
+   
+          <router-outlet></router-outlet>
+        
+  </body>
+</html>

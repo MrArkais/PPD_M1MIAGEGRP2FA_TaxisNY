@@ -1,0 +1,382 @@
+<div class="container profile">
+    <div class="row">
+        <div class="col-xs-12">
+            <mat-drawer-container class="example-container">
+                <mat-drawer mode="side" opened class="filters">
+                    <mat-card class="group-title">Filtres</mat-card>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-description>
+                                Total Amount
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="custom-slider">
+                            <ng5-slider [(value)]="valuePrix" [(highValue)]="highValuePrix" [options]="optionsPrix">
+                            </ng5-slider>
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-description>
+                                Trip Distance
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="custom-slider">
+                            <ng5-slider [(value)]="valueDist" [(highValue)]="highValueDist" [options]="optionsDist">
+                            </ng5-slider>
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-description>
+                                Fare Amount
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="custom-slider">
+                            <ng5-slider [(value)]="valueFare" [(highValue)]="highValueFare" [options]="optionsFare">
+                            </ng5-slider>
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-description>
+                                Extra
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="custom-slider">
+                            <ng5-slider [(value)]="valueExtra" [(highValue)]="highValueExtra" [options]="optionsExtra">
+                            </ng5-slider>
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-description>
+                                Improvement Surcharge
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="custom-slider">
+                            <ng5-slider [(value)]="valueImprov" [(highValue)]="highValueImprov"
+                                [options]="optionsImprov">
+                            </ng5-slider>
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-description>
+                                MTA TAX
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="custom-slider">
+                            <ng5-slider [(value)]="valueMta" [(highValue)]="highValueMta" [options]="optionsMta">
+                            </ng5-slider>
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-description>
+                                Passenger Count
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="custom-slider">
+                            <ng5-slider [(value)]="valuePass" [(highValue)]="highValuePass" [options]="optionsPass">
+                            </ng5-slider>
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-description>
+                                Tip Amount
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="custom-slider">
+                            <ng5-slider [(value)]="valueTip" [(highValue)]="highValueTip" [options]="optionsTip">
+                            </ng5-slider>
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-description>
+                                Tolls Amount
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="custom-slider">
+                            <ng5-slider [(value)]="valueTolls" [(highValue)]="highValueTolls" [options]="optionsTolls">
+                            </ng5-slider>
+                        </div>
+                    </mat-expansion-panel>
+
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-description>
+                                Rate
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <mat-form-field>
+                            <mat-label>Rate Code</mat-label>
+                            <mat-select [(value)]="selectAll_RateCodeId" multiple [formControl]="rateCodeID">
+                                <mat-option (click)="selectAll_RateCodeId(ev)" #ev>All</mat-option>
+
+                                <mat-option *ngFor="let n of enums.rate_code" value="{{ n.id }}">{{ n.name }}
+                                </mat-option>
+
+                            </mat-select>
+                        </mat-form-field>
+
+                    </mat-expansion-panel>
+
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-description>
+                                Payment
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <mat-form-field>
+                            <mat-label>Payment Type</mat-label>
+                            <mat-select [(value)]="selectAll_PaymentType" multiple [formControl]="paymentType">
+                                <mat-option (click)="selectAll_PaymentType(ev)" #ev>All</mat-option>
+
+                                <mat-option *ngFor="let n of enums.payment_type" value="{{ n.id }}">{{ n.name }}
+                                </mat-option>
+
+                            </mat-select>
+                        </mat-form-field>
+
+                    </mat-expansion-panel>
+
+
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-description>
+                                Zones
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <mat-form-field>
+                            <mat-label>Zone départ</mat-label>
+                            <mat-select [(value)]="selectedZoneDep" multiple [formControl]="zoneDEP">
+                                <mat-option (click)="selectAll_zonesDepart(ev)" #ev>All</mat-option>
+                                <mat-option *ngFor="let zone of enums.zones" [value]="zone">{{
+                  zone
+                }}</mat-option>
+                            </mat-select>
+                        </mat-form-field><br />
+                        <mat-form-field>
+                            <mat-label>Zone arrivée</mat-label>
+                            <mat-select [(value)]="selectedZoneArr" multiple [formControl]="zoneARR">
+                                <mat-option (click)="selectAll_zonesArrivee(evArr)" #evArr>All</mat-option>
+                                <mat-option *ngFor="let zone of enums.zones" [value]="zone">{{
+                  zone
+                }}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-description>
+                                VendorID
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <mat-form-field>
+                            <mat-select [(value)]="selectedVendorId" multiple [formControl]="vendorID">
+                                <mat-option (click)="selectAll_vendorId(evVen)" #evVen>All</mat-option>
+                                <mat-option *ngFor="let n of enums.vendors" value="{{ n.id }}">{{ n.name }}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </mat-expansion-panel>
+                    <button class="btn" (click)="postFilter()" mat-flat-button>
+                        Appliquer le filtre
+                    </button>
+                </mat-drawer>
+
+                <mat-drawer-content class="loader" *ngIf="showSpinner">
+                    <mat-card class="page-title">
+                        <h1>{{ title }}</h1>
+                    </mat-card>
+
+                    <mat-divider style="width: 80%; margin: auto;"></mat-divider>
+
+                    <mat-spinner style="margin: auto; display: block;"></mat-spinner>
+                </mat-drawer-content>
+
+                <mat-drawer-content class="dashboard" *ngIf="showSpinner == false">
+                    <!-- TITLE -->
+
+                    <mat-card class="page-title">
+                        <h1>{{ title }}</h1>
+                    </mat-card>
+
+                    <!-- CHARTS -->
+                    <!-- <app-pieChart class="chat-box" [statschild]="{
+              DEP: stats.zone_depart_distinct,
+              ARR: stats.zone_arrivee_distinct
+            }"></app-pieChart> -->
+
+                    <app-scientistChart class="chat-box" [statschild]=stats></app-scientistChart>
+
+
+                    <mat-divider style="width: 80%; margin: auto; margin-bottom: 20px;"></mat-divider>
+
+                    <!-- STAT -->
+                    <div class="stat-box stat">
+                        <mat-card class="group-title">
+                            <h1>Statistiques</h1>
+                        </mat-card>
+                        <mat-card-content>
+                            <mat-grid-list cols="3" rowHeight="2:1">
+                                <mat-grid-tile>
+                                    <mat-card class="metrique">
+                                        <mat-card-header>
+                                            <mat-card-title>Total amount</mat-card-title>
+                                            <mat-card-subtitle>Moyenne</mat-card-subtitle>
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                            <div>
+                                                <h1>
+                                                    <b>{{ stats.moyenne[0].moyenne_total_amount }} $ </b>
+                                                </h1>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <mat-card class="metrique">
+                                        <mat-card-header>
+                                            <mat-card-title>Trip Distance</mat-card-title>
+                                            <mat-card-subtitle>Moyenne</mat-card-subtitle>
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                            <div>
+                                                <h1>
+                                                    <b>{{ stats.moyenne[1].moyenne_trip_distance }} km
+                                                    </b>
+                                                </h1>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </mat-grid-tile>
+
+                                <mat-grid-tile>
+                                    <mat-card class="metrique">
+                                        <mat-card-header>
+                                            <mat-card-title>Passenger Count</mat-card-title>
+                                            <mat-card-subtitle>Moyenne</mat-card-subtitle>
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                            <div>
+                                                <h1>
+                                                    <b>{{ stats.moyenne[2].moyenne_passenger_count }}
+                                                    </b>
+                                                </h1>
+                                            </div>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </mat-grid-tile>
+                            </mat-grid-list>
+                        </mat-card-content>
+                    </div>
+
+                    <!-- METRIQUE -->
+                    <div class="stat-box">
+                        <mat-card class="group-title">
+                            <h1>Métriques de qualité</h1>
+                        </mat-card>
+                        <mat-card-content>
+                            <mat-grid-list cols="2" rowHeight="2:1" *ngFor="let s of stats.metrique">
+                                <mat-grid-tile>
+                                    <mat-card class="metrique">
+                                        <mat-card-header>
+                                            <mat-card-title>Total</mat-card-title>
+                                            <mat-card-subtitle>Nombre de valeurs totales
+                                            </mat-card-subtitle>
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                            <h1>
+                                                <b>{{ s.total_taxis }} </b>
+                                            </h1>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </mat-grid-tile>
+
+                                <mat-grid-tile>
+                                    <mat-card class="metrique">
+                                        <mat-card-header>
+                                            <mat-card-title>Complétude</mat-card-title>
+                                            <mat-card-subtitle>Nombre de valeurs NaN supprimé</mat-card-subtitle>
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                            <h1>
+                                                <b>{{ s.nan }} </b>
+                                            </h1>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </mat-grid-tile>
+                            </mat-grid-list>
+                            <mat-grid-list cols="3" rowHeight="1:1" *ngFor="let s of stats.metrique">
+                                <mat-grid-tile>
+                                    <mat-card class="metrique">
+                                        <mat-card-header>
+                                            <mat-card-title>Data Scientist</mat-card-title>
+                                            <mat-card-subtitle>Nombre de valeurs exploitables</mat-card-subtitle>
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                            <h1>
+                                                <b>{{ s.total }} </b>
+                                            </h1>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </mat-grid-tile>
+
+                                <mat-grid-tile>
+                                    <mat-card class="metrique">
+                                        <mat-card-header>
+                                            <mat-card-title>Data Scientist</mat-card-title>
+                                            <mat-card-subtitle>Nombre de valeurs après filtrage</mat-card-subtitle>
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                            <h1>
+                                                <b>{{ s.total_filtered }} </b>
+                                            </h1>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </mat-grid-tile>
+
+                                <mat-grid-tile>
+                                    <mat-card class="metrique">
+                                        <mat-card-header>
+                                            <mat-card-title>Data Scientist</mat-card-title>
+                                            <mat-card-subtitle>
+                                                Pourcentage de données supprimées</mat-card-subtitle>
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                            <h1>
+                                                <b>{{
+                              ((s.total - s.total_filtered) / s.total) * 100
+                              | number: "1.0-1"
+                          }}
+                                                    %</b>
+                                            </h1>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </mat-grid-tile>
+                            </mat-grid-list>
+                        </mat-card-content>
+                    </div>
+
+                    <br />
+                </mat-drawer-content>
+            </mat-drawer-container>
+        </div>
+    </div>
+</div>
